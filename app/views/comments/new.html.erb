@@ -1,0 +1,16 @@
+<%= form_for :comment, url: article_comments_path do |f| %>
+ 
+  <p>
+    <%= f.label :name %><br>
+    <%= f.text_field :commenter %>
+  </p>
+ 
+  <p>
+    <%= f.label :comment %><br>
+    <%= f.text_area :body %>
+  </p>
+   
+    <%= f.submit %>
+  </p>
+ 
+<% end %>

@@ -1,0 +1,35 @@
+<p>
+  <strong>Title:</strong>
+  <%= @article.title %>
+</p>
+ 
+<p>
+  <strong>Text:</strong>
+  <%= @article.text %>
+</p>
+<% @comments.each do |comment| %>
+    <p>
+      <%= comment.id %><br>
+      <%= comment.commenter %><br>
+      <%= comment.body %> <br>
+      <%=  comment.created_at %> <br>
+      <%= comment.updated_at %> 
+
+    </p>
+  <% end %>
+<%= form_for([@article, @article.comment.build]) do |f| %>
+ 
+  <p>
+    <%= f.label :name %><br>
+    <%= f.text_field :commenter %>
+  </p>
+ 
+  <p>
+    <%= f.label :comment %><br>
+    <%= f.text_area :body %>
+  </p>
+   
+    <%= f.submit %>
+  </p>
+ 
+<% end %>

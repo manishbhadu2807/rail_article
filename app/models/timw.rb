@@ -1,0 +1,2 @@
+class Timw < ApplicationRecord
+end

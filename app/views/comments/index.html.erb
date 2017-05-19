@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+table, th, td {
+    border: 2px solid black;
+    border-collapse: collapse;
+}
+th, td {
+    padding: 15px;
+}
+</style>
+</head>
+<body>
+<h1>Listing comments</h1>
+<table style="width:50%" >
+  <tr>
+    <th>Title</th>
+    <th>Text</th>
+    <th colspan="3"></th>
+  </tr>
+ 
+
+  <% @comments.each do |comment| %>
+    <tr>
+      <td><%= comment.id %></td>
+      <td><%= comment.commenter %></td>
+      <td><%= comment.article_id %></td> 
+      <td><%=  comment.created_at %></td> 
+      <td><%= comment.updated_at %></td> 
+
+    </tr>
+  <% end %>
+</table>
+</body>
+<%= link_to 'new', new_article_comment_path %>
+</html>
